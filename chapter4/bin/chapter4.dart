@@ -1,20 +1,9 @@
+import 'dart:math';
+
 const global = 'Hello, world';
 
 void main(List<String> arguments) {
- const audioState = AudioState.stopped;
-
- switch (audioState) {
-  case AudioState.playing:
-  print('playing');
-  case AudioState.paused:
-  print('paused');
-  case AudioState.stopped:
-  print('stopped');
- }
-}
-
-enum AudioState {
-  playing,
-  paused,
-  stopped,
+for (var i = 0; i <= 10; i++) {
+    print(((i+1) / 10) - (i / 10));
+  }  
 }
