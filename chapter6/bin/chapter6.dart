@@ -1,5 +1,24 @@
-import 'package:chapter6/chapter6.dart' as chapter6;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${chapter6.calculate()}!');
+import 'user.dart';
+
+void main() {
+  final user = User(id: -1, name: 'Ray');
+  print(user);
+
+  final anonymousUser = User.anonymous();
+  print(anonymousUser);
+
+  print(user.isBigId);
+  var p = Email();
+  // print(p.address);
+  // p.address = 'ray@example.com';
+
+  User.hi();
+}
+
+
+class Email {
+  // Email(this.address);
+  // final address;
 }
