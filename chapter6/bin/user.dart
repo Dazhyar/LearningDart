@@ -1,26 +1,13 @@
 class User {
-  const User({int id = _anonymoustId, String name = _anonymoustName})
-      : assert(id >= 0),
-        _id = id, _name = name;
+  int id = 0;
+  String name = '';
 
-  const User.anonymous() : this();
-
-  final int _id;
-  final String _name;
-
-  static const _anonymoustId = 0;
-  static const _anonymoustName = 'anonymous';
-  
-  int get id => _id;
-  String get hahaha => _name;
-  bool get isBigId => _id > 1000;
-
-  static void hi() {
-    print('hi');
+  String toJson() {
+    return '{"id": $id, "name": "$name"}';
   }
 
-  @override
+  @override // An annotation
   String toString() {
-    return 'User(name: $hahaha, id: $id)';
+    return 'User(id: $id, name: $name)';
   }
 }
