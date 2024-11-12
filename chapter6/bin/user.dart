@@ -8,24 +8,21 @@ class User {
     and uses it to create the parameters needed to populate the 
     values of the object's properties.
    */
-  User(this.name, this.id); // Dart infers the parameters' types
+  User(this.id, this.name); // Dart infers the parameters' types
                             // from the properties themselves.
 
 
   // named constructor
   // long form
   // generative
-  User.anonymous() { // User.anonymous(). User: class name. 
-                    // anonymous: identifier.
-    id = 0;
-    name =  'anonymous'; // since there are no paramaters that might cause
-                         // confusions. then we don't need to use the 
-                         // 'this keyword'
-  }
+  // redirecting or forwarding the properties to the
+  // unnamed constructor.
+  User.anonymous() : this(42, 'anonymous'); 
 
-
-  int id= 42; // we can remove the default values. since it is guaranteed they will
-  String name = 'money'; // be initialized by the constructor
+  int id; // in this version we don't need default values since we do have
+  String name; // the anony. const. being guaranteed to initialize the 
+               // obj's properties by forwarding/redirecting default values
+               // to the obj's unnamed short-form generative constructor.
  
 
   String toJson() {
