@@ -1,22 +1,19 @@
 class User {
-  // long form
+  // short form
   // generative constructor: generates an object of the same type.
   
   /*
-    having the same name for the properties, and the constructor's
-    parameteres is called shadowing.
-    Ex: this.name (object property) and name (parameter).
+    the short-form constructor takes advantage of the 'this' keyword
+    and uses it to create the parameters needed to populate the 
+    values of the object's properties.
    */
-  User(int id, String name) {
-    this.id = id;
-    this.name = name; 
-  }
+  User(this.name, this.id); // Dart infers the parameters' types
+                            // from the properties themselves.
 
 
-  int id = 0;
-  String name = '';
-
-  User();
+  int id; // we can remove the default values. since it is guaranteed they will
+  String name; // be initialized by the constructor
+ 
 
   String toJson() {
     return '{"id": $id, "name": "$name"}';
