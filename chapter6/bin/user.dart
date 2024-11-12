@@ -8,16 +8,18 @@ class User {
     and uses it to create the parameters needed to populate the 
     values of the object's properties.
    */
-  User(this.id, this.name); // Dart infers the parameters' types
-                            // from the properties themselves.
+  
+  // the {} will make the parameters named optional parameters.
+  User({this.id = 0, this.name = 'anonymous'}); 
 
 
   // named constructor
   // long form
   // generative
-  // redirecting or forwarding the properties to the
-  // unnamed constructor.
-  User.anonymous() : this(42, 'anonymous'); 
+  // in this case we removed the parameters from the unnamed
+  // cons. since the unnamed constructor already has default values
+  // tht initialize the obj's properties with 'anonymous' and 0 
+  User.anonymous() : this(); 
 
   int id; // in this version we don't need default values since we do have
   String name; // the anony. const. being guaranteed to initialize the 
