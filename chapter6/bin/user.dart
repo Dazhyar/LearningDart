@@ -1,6 +1,7 @@
 class User {
   // short form
   // generative constructor: generates an object of the same type.
+  // unnamed constructor
   
   /*
     the short-form constructor takes advantage of the 'this' keyword
@@ -11,8 +12,20 @@ class User {
                             // from the properties themselves.
 
 
-  int id; // we can remove the default values. since it is guaranteed they will
-  String name; // be initialized by the constructor
+  // named constructor
+  // long form
+  // generative
+  User.anonymous() { // User.anonymous(). User: class name. 
+                    // anonymous: identifier.
+    id = 0;
+    name =  'anonymous'; // since there are no paramaters that might cause
+                         // confusions. then we don't need to use the 
+                         // 'this keyword'
+  }
+
+
+  int id= 42; // we can remove the default values. since it is guaranteed they will
+  String name = 'money'; // be initialized by the constructor
  
 
   String toJson() {

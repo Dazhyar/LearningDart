@@ -2,8 +2,10 @@ import 'user.dart';
 import 'Password.dart';
 
 void main() {
-  final user = User('Ray', 42);
-  print(user);
+  final anonyousUser = User.anonymous();
+  print(anonyousUser.id);
+  print(anonyousUser.name);
 
-  int what;
+  final pass = Password.numbers();
+  print(pass);
 }
